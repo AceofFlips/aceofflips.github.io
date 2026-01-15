@@ -305,5 +305,6 @@ export const config = {
     '--color-indicator-primary': '247 247 247',
     '--color-indicator-info': '161 199 245',
     '--color-indicator-error': '232 70 69',
+    
   }),
 };
