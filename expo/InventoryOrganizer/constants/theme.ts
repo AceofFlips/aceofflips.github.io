@@ -4,27 +4,19 @@
  */
 
 import { Platform } from 'react-native';
+import { vars } from "nativewind";
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
-
-export const Colors = {
-  light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
-  },
-  dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
-  },
+export const themes = {
+  light: vars({
+    "--colors-bg-primary":"slate-50",
+    "--colors-bg-secondary":"teal-300",
+    "--colors-text-primary":"neutral-950"
+  }),
+  dark: vars({
+    "--colors-bg-primary":"neutral-950",
+    "--colors-bg-secondary":"teal-800",
+    "--colors-text-primary":"slate-50"
+  }),
 };
 
 export const Fonts = Platform.select({
