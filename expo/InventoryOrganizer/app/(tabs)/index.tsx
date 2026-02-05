@@ -4,14 +4,27 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import {useEffect, useState} from "react";
 import {useFetch} from "@/services/api";
+import {List} from "postcss/lib/list";
 
 export default function Index() {
 
-    const{data,error,loading, refetch} = useFetch(`https://dummyjson.com/users`);
+
+    const [data, setData] = useState<any>([]);
+    const [searchText, setSearchText] = useState<string>('John');
 
 
-    if (loading) return <ActivityIndicator size={"large"} color={"red"}/>
-    if (error) return <Text>Error: {error}</Text>
+    //const{data,error,loading, refetch} = useFetch(`https://dummyjson.com/users`);
+    //if (loading) return <ActivityIndicator size={"large"} color={"red"}/>
+    //if (error) return <Text>Error: {error}</Text>
+    async function buttonFetch(){
+        const response = await fetch(`https://dummyjson.com/users/search?q=${searchText}`);
+        if (!response.ok) {}
+        const body = await response.json();
+        console.log(body);
+        setData(body.users);
+        console.log(data)
+    }
+
   return (
     <ThemedView style={styles.container}>
       <ThemedText type = "title">
@@ -22,6 +35,10 @@ export default function Index() {
                 Go to About screen
             </ThemedText>
         </Link>
+
+        <Pressable onPress={buttonFetch}>
+            <Text>Fetch Users</Text>
+        </Pressable>
         <FlatList data={data} renderItem={({item}) =>(
              <View style={styles.wrapper}>
                  <ThemedText>{item?.username}</ThemedText>
@@ -30,10 +47,6 @@ export default function Index() {
             )}>
 
         </FlatList>
-        <Pressable
-            onPress={() => {refetch();}}>
-
-        </Pressable>
     </ThemedView>
   );
 }
