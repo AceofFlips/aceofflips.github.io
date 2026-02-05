@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, FlatList, ActivityIndicator} from "react-native";
+import {Text, View, StyleSheet, FlatList, ActivityIndicator, Pressable, TextInput} from "react-native";
 import { Link } from 'expo-router';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -6,7 +6,9 @@ import {useEffect, useState} from "react";
 import {useFetch} from "@/services/api";
 
 export default function Index() {
-    const{data,error,loading, refetch} = useFetch("https://dummyjson.com/users");
+
+    const{data,error,loading, refetch} = useFetch(`https://dummyjson.com/users`);
+
 
     if (loading) return <ActivityIndicator size={"large"} color={"red"}/>
     if (error) return <Text>Error: {error}</Text>
@@ -22,15 +24,20 @@ export default function Index() {
         </Link>
         <FlatList data={data} renderItem={({item}) =>(
              <View style={styles.wrapper}>
-                 <Text>{item?.username}</Text>
-                 <Text>{item?.birthDate}</Text>
+                 <ThemedText>{item?.username}</ThemedText>
+                 <ThemedText>{item?.birthDate}</ThemedText>
              </View>
             )}>
 
         </FlatList>
+        <Pressable
+            onPress={() => {refetch();}}>
+
+        </Pressable>
     </ThemedView>
   );
 }
+
 
 const styles = StyleSheet.create({
     container: {
