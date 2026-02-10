@@ -9,7 +9,7 @@ export default function Index() {
     const { theme, handleThemeSwitch, systemEnabled } = useTheme();
     return (
         <View className={`flex-1 bg-primary justify-center items-center`}>
-          <Text className="text-6xl text-tertiary text-center">
+          <Text className="text-6xl text-foreground text-center">
               Welcome to My App!
           </Text>
             <Link href="/about">

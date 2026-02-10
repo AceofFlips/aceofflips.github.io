@@ -5,19 +5,18 @@
 
 import { Platform } from 'react-native';
 import { vars } from "nativewind";
+import { ThemeData } from "./themeData";
 
 export const themes = {
-  light: vars({
-    "--colors-primary":"slate-50",
-    "--colors-secondary":"teal-300",
-    "--colors-tertiary":"neutral-950",
-    "--colors-tint":"teal-100",
+  light: vars<ThemeData>({
+    "--bg-color": "white",
+    "--primary-color": "blue",
+    "--text-color": "black",
   }),
-  dark: vars({
-    "--colors-primary":"neutral-950",
-    "--colors-secondary":"teal-800",
-    "--colors-tertiary":"slate-50",
-    "--colors-tint":"teal-900",
+  dark: vars<ThemeData>({
+    "--bg-color": "black",
+    "--primary-color": "indigo",
+    "--text-color": "white",
   }),
 };
 
