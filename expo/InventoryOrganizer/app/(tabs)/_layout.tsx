@@ -1,23 +1,13 @@
 import { Tabs } from 'expo-router';
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { StyledTabs } from "@/components/tabs";
 
 export default function TabLayout() {
-    const colorScheme = useColorScheme();
-
     return (
-        <Tabs
+        <StyledTabs
+            tabBarClassName="bg-gray-100 dark:bg-background pt-3"
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-                headerStyle: {
-                    backgroundColor:Colors[colorScheme ?? 'light'].background,
-                },
-                headerShadowVisible: false,
-                headerTintColor: Colors[colorScheme ?? 'light'].tint,
-                tabBarStyle: {
-                    backgroundColor:Colors[colorScheme ?? 'light'].background,
-                },
+                headerShown:false,
             }}
         >
             <Tabs.Screen
@@ -46,6 +36,6 @@ export default function TabLayout() {
                     )
                 }}
             />
-        </Tabs>
+        </StyledTabs>
     );
 }

@@ -8,14 +8,16 @@ import { vars } from "nativewind";
 
 export const themes = {
   light: vars({
-    "--colors-bg-primary":"slate-50",
-    "--colors-bg-secondary":"teal-300",
-    "--colors-text-primary":"neutral-950"
+    "--colors-primary":"slate-50",
+    "--colors-secondary":"teal-300",
+    "--colors-tertiary":"neutral-950",
+    "--colors-tint":"teal-100",
   }),
   dark: vars({
-    "--colors-bg-primary":"neutral-950",
-    "--colors-bg-secondary":"teal-800",
-    "--colors-text-primary":"slate-50"
+    "--colors-primary":"neutral-950",
+    "--colors-secondary":"teal-800",
+    "--colors-tertiary":"slate-50",
+    "--colors-tint":"teal-900",
   }),
 };
 
