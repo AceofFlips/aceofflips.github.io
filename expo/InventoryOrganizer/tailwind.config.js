@@ -12,36 +12,34 @@ module.exports = {
   theme: {
       extend: {
           colors: {
-              colors:{
-                  background: "hsl(var(--background))",
-                  foreground: "hsl(var(--foreground))",
-                  input: "hsl(var(--input))",
-                  primary: {
-                      DEFAULT: "hsl(var(--primary))",
-                      foreground: "hsl(var(--primary-foreground))",
-                      background: "hsl(var(--primary-background))",
-                  },
-                  secondary: {
-                      DEFAULT: "hsl(var(--secondary))",
-                      foreground: "hsl(var(--secondary-foreground))",
-                      background: "hsl(var(--secondary-background))",
-                  },
-                  destructive: {
-                      DEFAULT: "hsl(var(--destructive))",
-                      foreground: "hsl(var(--destructive-foreground))",
-                  },
-                  accent: {
-                      DEFAULT: "hsl(var(--accent))",
-                      foreground: "hsl(var(--accent-foreground))",
-                  },
-                  muted: {
-                      DEFAULT: "hsl(var(--muted))",
-                      foreground: "hsl(var(--muted-foreground))",
-                  },
-                  popover: {
-                      DEFAULT: "hsl(var(--popover))",
-                      foreground: "hsl(var(--popover-foreground))",
-                  }
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              input: "hsl(var(--input))",
+              primary: {
+                  DEFAULT: "hsl(var(--primary))",
+                  foreground: "hsl(var(--primary-foreground))",
+                  background: "hsl(var(--primary-background))",
+              },
+              secondary: {
+                  DEFAULT: "hsl(var(--secondary))",
+                  foreground: "hsl(var(--secondary-foreground))",
+                  background: "hsl(var(--secondary-background))",
+              },
+              destructive: {
+                  DEFAULT: "hsl(var(--destructive))",
+                  foreground: "hsl(var(--destructive-foreground))",
+              },
+              accent: {
+                  DEFAULT: "hsl(var(--accent))",
+                  foreground: "hsl(var(--accent-foreground))",
+              },
+              muted: {
+                  DEFAULT: "hsl(var(--muted))",
+                  foreground: "hsl(var(--muted-foreground))",
+              },
+              popover: {
+                  DEFAULT: "hsl(var(--popover))",
+                  foreground: "hsl(var(--popover-foreground))",
               }
           }
       }

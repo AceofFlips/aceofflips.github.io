@@ -14,7 +14,7 @@ export default function Index() {
               Welcome to My App!
           </Text>
             <Link href="/about">
-                <Text>
+                <Text className="text-foreground">
                     Go to About screen
                 </Text>
             </Link>
