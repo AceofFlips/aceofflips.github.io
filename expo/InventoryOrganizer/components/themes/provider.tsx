@@ -16,8 +16,7 @@ const ThemeProvider = ({ children, className, ...props }: ThemeProps) => {
 
     const [theme, setTheme] = useState<ThemesVariants | null>(null);
     const [systemEnabled, setSystemEnabled] = useState<boolean>(true);
-    const [systemTheme, setSystemTheme] =
-        useState<SystemThemesVariants>(userPreferedTheme);
+    const [systemTheme, setSystemTheme] = useState<SystemThemesVariants>(userPreferedTheme);
 
     useEffect(
         useCallback(() => {
