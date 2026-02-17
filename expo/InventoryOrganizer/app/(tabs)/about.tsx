@@ -1,24 +1,19 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import {Text, View, ScrollView, Pressable} from "react-native";
+import { Link } from 'expo-router';
+import {useTheme} from "@/components/themes/context";
+import clsx from "clsx";
+
 
 export default function AboutScreen() {
     return (
-        <ThemedView style={styles.container}>
-            <ThemedText type="title">
+        <View className="flex-1 bg-background justify-center items-center">
+            <Text className="text-foreground text-5xl">
                 About Me!
-            </ThemedText>
-            <ThemedText type="default">
+            </Text>
+            <Text className="text-foreground p-3 text-center">
                 My name is Madeleine Brown. I'm a senior at Franklin Central High School and I'm enrolled in three Computer Science classes. I'm also stinky.
-            </ThemedText>
-        </ThemedView>
+            </Text>
+        </View>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-});

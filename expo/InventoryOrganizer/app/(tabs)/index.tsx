@@ -1,8 +1,5 @@
 import {Text, View, ScrollView, Pressable} from "react-native";
 import { Link } from 'expo-router';
-import { useState } from "react";
-import { colorScheme, useColorScheme } from "nativewind";
-import { StatusBar } from 'expo-status-bar';
 import {useTheme} from "@/components/themes/context";
 import clsx from "clsx";
 
@@ -10,7 +7,12 @@ export default function Index() {
     const { theme, handleThemeSwitch, systemEnabled } = useTheme();
     return (
         <View className="flex-1 bg-background justify-center items-center">
-          <Text className="text-6xl text-foreground text-center">
+            <View className="flex md:flex-row flex-col items-center">
+                <Text className="text-foreground"> ~ Test 1 ~ </Text>
+                <Text className="text-foreground"> ~ Test 2 ~ </Text>
+                <Text className="text-foreground"> ~ Test 3 ~ </Text>
+            </View>
+          <Text className="text-5xl md:text-6xl text-foreground text-center">
               Welcome to My App!
           </Text>
             <Link href="/about">
@@ -22,7 +24,7 @@ export default function Index() {
             <Pressable
                 onPress={() => handleThemeSwitch("system")}
                 className={clsx(
-                    "transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent",
+                    "transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent focus:bg-accent",
                     systemEnabled && "bg-primary"
                 )}
             >
@@ -31,7 +33,7 @@ export default function Index() {
             <Pressable
                 onPress={() => handleThemeSwitch("light")}
                 className={clsx(
-                    "transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent",
+                    "transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent focus:bg-accent",
                     theme === "light" && !systemEnabled && "bg-primary"
                 )}
             >
@@ -42,7 +44,7 @@ export default function Index() {
             <Pressable
                 onPress={() => handleThemeSwitch("dark")}
                 className={clsx(
-                    "transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent",
+                    "transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent focus:bg-accent",
                     theme === "dark" && !systemEnabled && "bg-primary"
                 )}
             >

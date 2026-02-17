@@ -5,7 +5,7 @@ import { StyledTabs } from "@/components/tabs";
 export default function TabLayout() {
     return (
         <StyledTabs
-            tabBarClassName="bg-background dark:bg-background pt-3"
+            tabBarClassName="bg-background pt-3"
             screenOptions={{
                 headerShown:false,
             }}
