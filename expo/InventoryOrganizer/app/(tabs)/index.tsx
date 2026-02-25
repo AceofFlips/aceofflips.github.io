@@ -16,25 +16,19 @@ export default function Index() {
     }
 
     return (
-        <ScrollView className="flex h-screen overflow-hidden">
-            <View className="fixed left-0 top-0 z-9999 flex h-screen flex-col overflow-y-hidden bg-primary duration-300 ease-linear lg:static lg:translate-x-0 ${
-                sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-            }">
-                <View className="flex items-center justify-between gap-2 px-6 lg:py-6.5 py-5.5">
-                    <Pressable
-                        onPress={() => updateSidebarOpen(!sidebarOpen)}
-                        className="block lg:hidden bg-secondary">
-                        <Text>Toggle the Sidebar</Text>
-                    </Pressable>
-                </View>
-            </View>
+        <View className="bg-background flex h-screen">
 
-            <View className="bg-background relative z-9999 flex h-screen overflow-x-hidden overflow-y-auto items-center mx-auto p-4 pb-20 md:p-6 md:pb-6">
+            <View className="relative z-9999 flex h-screen overflow-x-hidden overflow-y-auto justify-center items-center mx-auto p-4 pb-20 md:p-6 md:pb-6 ">
                 <View className="flex sm:flex-row flex-col items-center">
                     <Text className="text-foreground"> ~ Test 1 ~ </Text>
                     <Text className="text-foreground"> ~ Test 2 ~ </Text>
                     <Text className="text-foreground"> ~ Test 3 ~ </Text>
                 </View>
+                <Pressable
+                    onPress={() => updateSidebarOpen(!sidebarOpen)}
+                    className="block lg:hidden bg-secondary transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent">
+                    <Text>Toggle the Sidebar</Text>
+                </Pressable>
               <Text className="text-5xl sm:text-6xl text-foreground text-center">
                   Welcome to My App!
               </Text>
@@ -83,7 +77,27 @@ export default function Index() {
 
                 <ThemedTable/>
             </View>
-        </ScrollView>
+            <View className={clsx("absolute left-0 top-0 z-9999 flex h-screen flex-col overflow-y-hidden bg-primary duration-300 ease-linear lg:translate-x-0",
+                sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+            )}>
+                <View className="flex items-center justify-between gap-2 px-6 lg:py-6.5 py-5.5">
+                    <Link href="/" className="py-2 px-3">
+                        <Text className="text-background">Go To Home</Text>
+                    </Link>
+                    <Pressable
+                        onPress={() => updateSidebarOpen(!sidebarOpen)}
+                        className="block lg:hidden bg-secondary transition-colors duration-300 py-2 px-3 border border-input rounded active:bg-accent">
+                        <Text>Toggle the Sidebar</Text>
+                    </Pressable>
+                </View>
+                <View className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
+                    <View className="mt-5 py-4 px-4 lg:mt-9 lg:px-6>">
+                        <Text className="text-background">Filler Text Here</Text>
+                    </View>
+                </View>
+            </View>
+
+        </View>
   );
 }
 
